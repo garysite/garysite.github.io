@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lakeside Worship Center</title>
+	<link rel="stylesheet" href="css/hw1.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<header>
+		<a href="index.html" title="">
+				<img src="http://www.lakesideworshipcenter.org/wp-content/uploads/2014/08/trans_logo.png" alt="Lakeside Logo">
+		</a>
+
+		<nav>
+			<a href="index.html" class = "active">Home</a>
+			<a href="about.html">About Us</a>
+			<a href="ministries.html">Ministries</a>
+			<a href="groups.html">Small Groups</a>
+			<a href="messages.html" >Messages</a>
+			<a href="give.html">Give</a>
+		</nav>
+	</header>
+
+	<main>
+
+		<div class="slideshow-container">
+
+			<div class="mySlides fade">
+			  <div class="numbertext">1 / 7</div>
+			  <img src="http://www.lakesideworshipcenter.org/wp-content/uploads/Slide1.1.jpg" style="width:100%">
+			  <div class="text">Caption One</div>
+			</div>
+			
+			<div class="mySlides fade">
+			  <div class="numbertext">2 / 7</div>
+			  <img src="http://www.lakesideworshipcenter.org/wp-content/uploads/2014/11/Slide2.jpg" style="width:100%">
+			  <div class="text">Caption Two</div>
+			</div>
+			
+			<div class="mySlides fade">
+			  <div class="numbertext">3 / 7</div>
+			  <img src="http://www.lakesideworshipcenter.org/wp-content/uploads/CampLakeside.jpg" style="width:100%">
+			  <div class="text">Caption Three</div>
+			</div>
+				
+			<div class="mySlides fade">
+				<div class="numbertext">4 / 7</div>
+				<img src="http://www.lakesideworshipcenter.org/wp-content/uploads/Lift-2.jpg" style="width:100%">
+				<div class="text">Caption Four</div>
+			</div>
+			  	
+			<div class="mySlides fade">
+				<div class="numbertext">5 / 7</div>
+				<img src="http://www.lakesideworshipcenter.org/wp-content/uploads/SupportDiscipleship-1.jpg" style="width:100%">
+				<div class="text">Caption Five</div>
+			</div>
+			  	
+			<!--
+			<div class="mySlides fade">
+				<div class="numbertext">x / 7</div>
+				<img src="http://www.lakesideworshipcenter.org/wp-content/uploads/Quar.jpg" style="width:100%">
+				<div class="text">Caption Six</div>
+			</div>
+			-->  	
+			<div class="mySlides fade">
+				<div class="numbertext">6 / 7</div>
+				<img src="http://www.lakesideworshipcenter.org/wp-content/uploads/PrayersChangeThings.jpg" style="width:100%">
+				<div class="text">Caption Seven</div>
+			</div>
+			  	
+			<div class="mySlides fade">
+				<div class="numbertext">7 / 7</div>
+				<img src="http://www.lakesideworshipcenter.org/wp-content/uploads/MothersDay20.jpg" style="width:100%">
+				<div class="text">Caption Eight</div>
+			</div>
+
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+			
+		</div>
+		<br>
+			
+		<div style="text-align:center">
+			<span class="dot" onclick="currentSlide(1)"></span> 
+			<span class="dot" onclick="currentSlide(2)"></span> 
+			<span class="dot" onclick="currentSlide(3)"></span> 
+			<span class="dot" onclick="currentSlide(4)"></span> 
+			<span class="dot" onclick="currentSlide(5)"></span> 
+			<span class="dot" onclick="currentSlide(6)"></span> 
+			<span class="dot" onclick="currentSlide(7)"></span> 
+		</div>
+			
+		<script>
+			var slideIndex = 1;
+			var myTimer;
+			var slideshowContainer;
+			var slideInterval = 7000;
+
+			window.addEventListener("load",function() {
+				showSlides(slideIndex);
+				myTimer = setInterval(function(){plusSlides(1)}, slideInterval);
+				
+				//COMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+				slideshowContainer = document.getElementsByClassName('slideshow-inner')[0];
+				
+				//UNCOMMENT OUT THE LINE BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+				// slideshowContainer = document.getElementsByClassName('slideshow-container')[0];
+				
+				slideshowContainer.addEventListener('mouseenter', pause)
+				slideshowContainer.addEventListener('mouseleave', resume)
+			})
+
+			// NEXT AND PREVIOUS CONTROL
+			function plusSlides(n){
+				clearInterval(myTimer);
+				if (n < 0){
+					showSlides(slideIndex -= 1);
+				} else {
+					showSlides(slideIndex += 1); 
+				}
+				
+				//COMMENT OUT THE LINES BELOW TO KEEP ARROWS PART OF MOUSEENTER PAUSE/RESUME
+				
+				if (n === -1){
+					myTimer = setInterval(function(){plusSlides(n + 2)}, slideInterval);
+				} else {
+					myTimer = setInterval(function(){plusSlides(n + 1)}, slideInterval);
+				}
+			}
+
+			//Controls the current slide and resets interval if needed
+			function currentSlide(n){
+				clearInterval(myTimer);
+				myTimer = setInterval(function(){plusSlides(n + 1)}, slideInterval);
+				showSlides(slideIndex = n);
+			}
+
+			function showSlides(n){
+				var i;
+				var slides = document.getElementsByClassName("mySlides");
+				var dots = document.getElementsByClassName("dot");
+				if (n > slides.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = slides.length}
+				for (i = 0; i < slides.length; i++) {
+					slides[i].style.display = "none";
+				}
+				for (i = 0; i < dots.length; i++) {
+					dots[i].className = dots[i].className.replace(" active", "");
+				}
+				slides[slideIndex-1].style.display = "block";
+				dots[slideIndex-1].className += " active";
+			}
+
+			pause = () => {
+				clearInterval(myTimer);
+			}
+
+			resume = () =>{
+				clearInterval(myTimer);
+				myTimer = setInterval(function(){plusSlides(slideIndex)}, slideInterval);
+			}
+		</script>
+
+		<section id="covid">
+			<h2>COVID-19 Update</h2>
+			<p>
+			There will be no services at the Plainfield Academy until further notice. A video message, including 
+			worship, will be posted by 10am each Sunday, viewable via this site (click on "Messages" above) or via 
+			the Lakeside Worship Center Facebook page. Join with your fellow brohers and sisters to praise God and 
+			receive His word from the comfort of your home!  Blessings!
+			</p>
+		</section>
+	</main>
+	<footer>
+		<section class="left">
+			<em>Meeting at:</em>
+			<p>  Plainfield Academy<br>23930 West Lockport Street<br>Plainfield, IL 60544</p>
+		</section>
+		<section class="middle">
+			<em>Office:</em>
+			<p>  12425 Rhea Drive Suite C<br>Plainfield, IL 60544</p>
+		</section>
+		<section class="right">
+			<a href="http://www.facebook.com/pages/Lakeside-Worship-Center/227650024093860" target="_blank" title=" Facebook" class="fa fa-facebook"></a>
+			<a href="https://twitter.com/LakeSideWorship" target="_blank" title=" Twitter"  class="fa fa-twitter"></a>
+
+			<div id="copyright">
+				© Lakeside Worship Center						
+			</div>	
+		</section>		
+	</footer>
+</body>
+</html>
