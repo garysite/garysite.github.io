@@ -5,8 +5,9 @@ body{
 
 header{
   background-color:rgba(113, 185, 226, 0.945);
-  /* background-image: url("https://q-xx.bstatic.com/xdata/images/hotel/840x460/162235381.jpg?k=f2d0e4e8f068e6b74c6cf297d04ec13756ed8ea50364bde41315fd287545685c&o=");  */
-  background-image: url("https://jooinn.com/images/chicago-skyline-3.jpg");
+  /* background-image: url("https://q-xx.bstatic.com/xdata/images/hotel/840x460/162235381.jpg?k=f2d0e4e8f068e6b74c6cf297d04ec13756ed8ea50364bde41315fd287545685c&o="); 
+  background-image: url("https://jooinn.com/images/chicago-skyline-3.jpg"); */
+  background-image: url("../images/Lakeside_Stage.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -14,15 +15,15 @@ header{
   padding-bottom: 5px;
   /* width: 94vw;  */
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 /* Styling for Lakeside image */
 header img{
   display: block;
-  height: 40%;
-  width: 40%;
+  height: 35%;
+  width: 35%;
   margin: 0 auto;
-  opacity: .9;
+  opacity: .85;
 }
 
 h1{

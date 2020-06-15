@@ -5,8 +5,27 @@
 		<title>Lakeside Worship Center</title>
 		<link rel="stylesheet" href="css/hw1.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<script>
+			function setDate(){
+				document.getElementById('date').innerHTML=Date();
+			}
+		</script>
+
 	</head>
-	<body>
+	<body onload="setDate()">
+	
+		<!--
+		<p> The current date is <span id = "date"></span></p>
+		
+		<script>
+			alert("This is an alert!");
+			var nm;
+			nm = prompt("Enter your name");
+			document.write(nm);
+			console.log(nm);
+		</script>
+		-->
 		<header>
 			<a href="index.html" title="">
 					<img src="http://www.lakesideworshipcenter.org/wp-content/uploads/2014/08/trans_logo.png" alt="Lakeside Logo">
@@ -15,7 +34,7 @@
 			<nav>
 				<a href="index.html" >Home</a>
 				<a href="about.html" class = "active" >About Us</a>
-				<a href="ministries.html" >Ministries</a>
+				<a href="ministries.html" >Get Connected</a>
 				<a href="groups.html">Small Groups</a>
 				<a href="messages.html" >Messages</a>
 				<a href="give.html" >Give</a>
@@ -84,9 +103,8 @@
 				<h2>LWC Leaders</h2>
 				<div class="sgItem">
 				  <img class="box-image" src="images/Dennis_Taylor.jpg" alt="Pastor Dennis">
-				  <h2><a href="mailto:pastordlakesideworship@comcast.net">Pastor Dennis Taylor</a></h2>
+				  <h2><a href="mailto:pastordlakesideworship@comcast.net">Senior Pastor Dennis Taylor</a></h2>
 				  <ul>
-					<li>Senior Pastor</li>
 					<li>Kingdom Man Small Group Leader</li>
 					<li>LWC Events</li>
 					<li>Truck Ministry</li>
@@ -105,9 +123,8 @@
 			  
 				<div class="sgItem">
 					<img class="box-image" src="images/JR_Ferralez.jpg" alt="JR Ferralez">
-					<h2><a href="mailto:stepstolife@comcast.net">Pastor Anestacio (JR) Ferralez</a></h2>
+					<h2><a href="mailto:stepstolife@comcast.net">Associate Pastor Anestacio (JR) Ferralez</a></h2>
 					<ul>
-						<li>Associate Pastor</li>
 						<li>Set-Up/Tear-Down Director</li>
 						<li>Support 180 Small Group Leader</li>
 					</ul>
@@ -118,7 +135,7 @@
 					<h2><a href="mailto:">Lynne Filipiak</a></h2>
 					<ul>
 						<li>Camp Lakeside Director</li>
-						<li>Accountant</li>
+						<li>Administrator</li>
 					</ul>
 				</div>
 
@@ -146,25 +163,16 @@
 					</ul>
 				</div>
 
-
-				<div class="sgItem">
-					<img class="box-image" src="images/Georgia_Conti.jpg" alt="Georgia Conti">
-					<h2><a href="">Georgia Conti</a></h2>
-					<ul>
-						<li>LWC Vocal Director</li>
-					</ul>
-				</div>
-
 				<div class="sgItem">
 					<img class="box-image" src="images/Gary_Dole.jpg" alt="Gary Dole">
 					<h2><a href="mailto:garydole@outlook.com">Gary Dole</a></h2>
 					<ul>
-						<li>LWC Band Director</li>
+						<li>Music Ministry</li>
 					</ul>
 				</div>
 
 				<div class="sgItem">
-					<img class="box-image" src="images/Alex_Gonzalez" alt="Alex Gonzalez">
+					<img class="box-image" src="images/Alex_Gonzalez.jpg" alt="Alex Gonzalez">
 					<h2><a href="mailto:">Alex Gonzalez</a></h2>
 					<ul>
 						<li>Sound</li>
@@ -205,7 +213,7 @@
 
 
 				<div class="sgItem">
-					<img class="box-image" src="images/LaVonne_Griggs" alt="LaVonne Griggs">
+					<img class="box-image" src="images/LaVonne_Griggs.jpg" alt="LaVonne Griggs">
 					<h2><a href="mailto:">LaVonne Griggs</a></h2>
 					<ul>
 						<li>Hospitality Director</li>
